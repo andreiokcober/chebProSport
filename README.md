@@ -28,39 +28,39 @@ https://mui.com/
 
 ## Packages and libraries
 
-- [ ] React framework
+- [x] React framework
 - [ ] Type Script
-- [ ] Material UI library
+- [x] Material UI library
 
 ## Ecosystem
 
 - [ ] Prettier
 - [ ] Linter(ts linter)
-- [ ] JSON Server(for demo api, https://egghead.io/lessons/javascript-creating-demo-apis-with-json-server)
+- [x] JSON Server(for demo api, https://egghead.io/lessons/javascript-creating-demo-apis-with-json-server)
 
 
 ## Architecture
 
- - [ ] file structure 
- - [ ] naming
+ - [x] file structure 
+ - [x] naming
 
 # Split work on tasks/subtasks:
 
 ## Common things:
 
-- [ ] invistigate gitflow atlassian.com/ru/git/tutorials/comparing-workflows/gitflow-workflow
+- [x] invistigate gitflow atlassian.com/ru/git/tutorials/comparing-workflows/gitflow-workflow
 - [ ] invistigate React framework
 https://ru.legacy.reactjs.org/
-- [ ] create repository
-- [ ] install React app
-- [ ] install other libraries
+- [x] create repository
+- [x] install React app
+- [x] install other libraries
 - [ ] configurate Type Script
 
 ## TODO Design:
 
-- [ ] design for header
-- [ ] design for footer
-- [ ] design for list of products(catalog page/view)
+- [x] design for header
+- [x] design for footer
+- [x] design for list of products(catalog page/view)
 - [ ] design for view of product(product page/view)
-- [ ] desgin for favorite products view
+- [x] desgin for favorite products view
 - [ ] desgin for cart view / checkout
