@@ -61,6 +61,6 @@ https://ru.legacy.reactjs.org/
 - [x] design for header
 - [x] design for footer
 - [x] design for list of products(catalog page/view)
-- [ ] design for view of product(product page/view)
+- [x] design for view of product(product page/view)
 - [x] desgin for favorite products view
-- [ ] desgin for cart view / checkout
+- [x] desgin for cart view / checkout
