@@ -35,7 +35,7 @@ export const Header = () => {
   };
 
   return (
-    <AppBar color="secondary">
+    <AppBar color="primary">
       <Container maxWidth="lg">
         <Grid
           xs={12}
@@ -102,7 +102,7 @@ export const Header = () => {
             <ShoppingBasketIcon color="primary" sx={{ fontSize: '2em' }} />
           </Grid>
           <Grid item>
-            <Button color="primary" variant="contained">
+            <Button color="secondary" variant="contained">
               <LoginIcon />
             </Button>
           </Grid>
