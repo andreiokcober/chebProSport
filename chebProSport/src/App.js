@@ -1,8 +1,11 @@
+import Catalog from './components/catalog/catalog'
+
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
+      <Catalog />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
