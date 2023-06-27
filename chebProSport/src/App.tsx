@@ -1,8 +1,10 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material';
+import { Grid, ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 import { Header } from './components/header';
+import { CarouselBlock } from './components/carousel';
+import img1 from './image/image.png';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -17,11 +19,31 @@ const customTheme: ThemeOptions = {
 
 const theme = createTheme(customTheme);
 
+
+const carouselData = [
+  {
+    image: img1,
+  },
+  {
+    image: img1,
+  },
+  {
+    image: img1,
+  },
+]
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
-        <Header />
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Header />
+          </Grid>
+          <Grid item xs={12} alignItems="center">
+            <CarouselBlock data={carouselData}/>
+          </Grid>
+        </Grid>
       </div>
     </ThemeProvider>
   );
