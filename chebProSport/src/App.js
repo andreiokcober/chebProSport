@@ -1,8 +1,11 @@
+import Main from './components/main/main'
+
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
+      <Main />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
