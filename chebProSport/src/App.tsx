@@ -4,6 +4,8 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 import { Header } from './components/header';
 import { CarouselBlock } from './components/carousel';
+import Catalog from './components/catalog/catalog';
+
 import img1 from './image/image.png';
 
 const customTheme: ThemeOptions = {
@@ -42,6 +44,9 @@ function App() {
           </Grid>
           <Grid item xs={12} alignItems="center">
             <CarouselBlock data={carouselData}/>
+          </Grid>
+          <Grid item xs={12}>
+            <Catalog />
           </Grid>
         </Grid>
       </div>

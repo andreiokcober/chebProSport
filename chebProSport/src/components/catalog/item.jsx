@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, Typography, CardActions, Button, Grid, Box } from '@mui/material'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import Badge from '@mui/material/Badge'
+
 const Item = (prop) => {
   const { item } = prop
   return (
@@ -22,7 +23,8 @@ const Item = (prop) => {
           <Button
             variant='contained'
             size='small'
-            sx={{ backgroundColor: '#772BD8', padding: '4px 6px' }}
+            color="secondary"
+            sx={ {padding: '4px 6px' }}
           >
             <Typography
               variant='body2'
