@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, MouseEvent } from 'react';
 import {
   AppBar,
   Container,
@@ -14,61 +14,51 @@ import {
   Typography,
   Input,
   Grid,
-} from '@mui/material'
-import { createTheme } from '@mui/material/styles'
-import LoginIcon from '@mui/icons-material/Login'
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
-import SearchIcon from '@mui/icons-material/Search'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import PersonIcon from '@mui/icons-material/Person'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
+} from '@mui/material';
+import LoginIcon from '@mui/icons-material/Login';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PersonIcon from '@mui/icons-material/Person';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
-const theme = createTheme({
-  palette: {
-    header: {
-      main: '#FFFFFF',
-    },
-    mainColor: {
-      main: '#772BD8',
-    },
-  },
-})
-const navItems = ['Акции', 'Блог', 'Доставка']
+const NAV_ITEMS_LIST = ['Акции', 'Блог', 'Доставка'];
 
-const Header = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const open = Boolean(anchorEl)
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
+export const Header = () => {
+  const [anchorEl, setAnchorEl] = useState<null | Element>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
   const handleClose = () => {
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
+
   return (
-    <AppBar theme={theme} color='header'>
-      <Container maxWidth='1280px'>
+    <AppBar color="secondary">
+      <Container maxWidth="lg">
         <Grid
           xs={12}
           container
-          direction='row'
-          alignItems='center'
+          direction="row"
+          alignItems="center"
           spacing={0}
           justifyContent={'space-between'}
         >
-          <Grid flexDirection='row'>
+          <Grid flexDirection="row">
             <List sx={{ display: 'flex', p: '0' }}>
               <Button
                 sx={{ color: 'black' }}
-                id='fade-button'
+                id="fade-button"
                 aria-controls={open ? 'fade-menu' : undefined}
-                aria-haspopup='true'
+                aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
               >
                 Каталог
               </Button>
               <Menu
-                id='fade-menu'
+                id="fade-menu"
                 MenuListProps={{
                   'aria-labelledby': 'fade-button',
                 }}
@@ -82,7 +72,7 @@ const Header = () => {
                 <MenuItem onClick={handleClose}>Гейнеры</MenuItem>
                 <MenuItem onClick={handleClose}>Аминокислоты</MenuItem>
               </Menu>
-              {navItems.map((item) => (
+              {NAV_ITEMS_LIST.map((item) => (
                 <ListItem key={item} disablePadding>
                   <ListItemButton sx={{ textAlign: 'center' }}>
                     <ListItemText sx={{ margin: '15px 0px' }} primary={item} />
@@ -103,22 +93,21 @@ const Header = () => {
             </Box>
           </Grid>
           <Grid item sx={{ display: 'flex', alignItems: 'end' }}>
-            <Input sx={{ width: '250px' }} type='search'></Input>
+            <Input sx={{ width: '250px' }} type="search" />
             <SearchIcon sx={{ alignItems: 'self-end', cursor: 'pointer', fontSize: '2em' }} />
           </Grid>
           <Grid item>
-            <FavoriteIcon theme={theme} color='mainColor' sx={{ fontSize: '2em' }} />
-            <PersonIcon theme={theme} color='mainColor' sx={{ fontSize: '2em' }} />
-            <ShoppingBasketIcon theme={theme} color='mainColor' sx={{ fontSize: '2em' }} />
+            <FavoriteIcon color="primary" sx={{ fontSize: '2em' }} />
+            <PersonIcon color="primary" sx={{ fontSize: '2em' }} />
+            <ShoppingBasketIcon color="primary" sx={{ fontSize: '2em' }} />
           </Grid>
           <Grid item>
-            <Button theme={theme} color='mainColor' variant='contained'>
+            <Button color="primary" variant="contained">
               <LoginIcon />
             </Button>
           </Grid>
         </Grid>
       </Container>
     </AppBar>
-  )
-}
-export default Header
+  );
+};
