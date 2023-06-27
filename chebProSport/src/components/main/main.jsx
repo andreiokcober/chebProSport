@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Box, Typography } from '@mui/material'
-import Carousel from '../carousel/carousel'
+import Carousel from '../carousel'
 const Main = () => {
   return (
     <main style={{ backgroundColor: '#F7F0F5', padding: '40px 0px' }}>
