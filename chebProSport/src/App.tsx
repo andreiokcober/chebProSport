@@ -35,7 +35,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className='App'>
         <Header />
-        <CarouselBlock data={carouselData} />
+        <main style={{ backgroundColor: '#F7F0F5', padding: '40px 0px' }}>
+          <CarouselBlock data={carouselData} />
+        </main>
       </div>
     </ThemeProvider>
   );
