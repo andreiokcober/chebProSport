@@ -35,30 +35,31 @@ export const Header = () => {
   };
 
   return (
-    <AppBar color="primary">
-      <Container maxWidth="lg">
+    <AppBar color='primary'>
+      <Container maxWidth='lg'>
         <Grid
+          item
           xs={12}
           container
-          direction="row"
-          alignItems="center"
+          direction='row'
+          alignItems='center'
           spacing={0}
           justifyContent={'space-between'}
         >
-          <Grid flexDirection="row">
+          <Grid flexDirection='row' item>
             <List sx={{ display: 'flex', p: '0' }}>
               <Button
                 sx={{ color: 'black' }}
-                id="fade-button"
+                id='fade-button'
                 aria-controls={open ? 'fade-menu' : undefined}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
               >
                 Каталог
               </Button>
               <Menu
-                id="fade-menu"
+                id='fade-menu'
                 MenuListProps={{
                   'aria-labelledby': 'fade-button',
                 }}
@@ -93,16 +94,22 @@ export const Header = () => {
             </Box>
           </Grid>
           <Grid item sx={{ display: 'flex', alignItems: 'end' }}>
-            <Input sx={{ width: '250px' }} type="search" />
-            <SearchIcon sx={{ alignItems: 'self-end', cursor: 'pointer', fontSize: '2em' }} />
+            <Input sx={{ width: '250px' }} type='search' />
+            <SearchIcon
+              sx={{
+                alignItems: 'self-end',
+                cursor: 'pointer',
+                fontSize: '2em',
+              }}
+            />
           </Grid>
           <Grid item>
-            <FavoriteIcon color="primary" sx={{ fontSize: '2em' }} />
-            <PersonIcon color="primary" sx={{ fontSize: '2em' }} />
-            <ShoppingBasketIcon color="primary" sx={{ fontSize: '2em' }} />
+            <FavoriteIcon color='primary' sx={{ fontSize: '2em' }} />
+            <PersonIcon color='primary' sx={{ fontSize: '2em' }} />
+            <ShoppingBasketIcon color='primary' sx={{ fontSize: '2em' }} />
           </Grid>
           <Grid item>
-            <Button color="secondary" variant="contained">
+            <Button color='secondary' variant='contained'>
               <LoginIcon />
             </Button>
           </Grid>
