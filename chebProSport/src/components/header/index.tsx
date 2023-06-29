@@ -1,85 +1,26 @@
-import React, { useState, MouseEvent } from 'react';
-import {
-  AppBar,
-  Container,
-  Box,
-  Button,
-  List,
-  ListItemButton,
-  ListItem,
-  ListItemText,
-  Menu,
-  MenuItem,
-  Fade,
-  Typography,
-  Input,
-  Grid,
-} from '@mui/material';
-import LoginIcon from '@mui/icons-material/Login';
+import React from 'react';
+import { AppBar, Container, Box, Typography, Grid } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonIcon from '@mui/icons-material/Person';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-
-const NAV_ITEMS_LIST = ['Акции', 'Блог', 'Доставка'];
+import Navigation from './catalog';
+import Search from './search';
+import IConsBlock from './icons';
+import Login from './login';
 
 export const Header = () => {
-  const [anchorEl, setAnchorEl] = useState<null | Element>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <AppBar color="primary">
-      <Container maxWidth="lg">
+    <AppBar color='primary' position='static'>
+      <Container>
         <Grid
+          item
           xs={12}
           container
-          direction="row"
-          alignItems="center"
+          direction='row'
+          alignItems='center'
           spacing={0}
           justifyContent={'space-between'}
         >
-          <Grid flexDirection="row">
-            <List sx={{ display: 'flex', p: '0' }}>
-              <Button
-                sx={{ color: 'black' }}
-                id="fade-button"
-                aria-controls={open ? 'fade-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                Каталог
-              </Button>
-              <Menu
-                id="fade-menu"
-                MenuListProps={{
-                  'aria-labelledby': 'fade-button',
-                }}
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                TransitionComponent={Fade}
-              >
-                <MenuItem onClick={handleClose}>Протеин</MenuItem>
-                <MenuItem onClick={handleClose}>Креатин</MenuItem>
-                <MenuItem onClick={handleClose}>Гейнеры</MenuItem>
-                <MenuItem onClick={handleClose}>Аминокислоты</MenuItem>
-              </Menu>
-              {NAV_ITEMS_LIST.map((item) => (
-                <ListItem key={item} disablePadding>
-                  <ListItemButton sx={{ textAlign: 'center' }}>
-                    <ListItemText sx={{ margin: '15px 0px' }} primary={item} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
+          <Grid item>
+            <Navigation />
           </Grid>
           <Grid item>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -92,19 +33,14 @@ export const Header = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item sx={{ display: 'flex', alignItems: 'end' }}>
-            <Input sx={{ width: '250px' }} type="search" />
-            <SearchIcon sx={{ alignItems: 'self-end', cursor: 'pointer', fontSize: '2em' }} />
+          <Grid item>
+            <Search />
           </Grid>
           <Grid item>
-            <FavoriteIcon color="primary" sx={{ fontSize: '2em' }} />
-            <PersonIcon color="primary" sx={{ fontSize: '2em' }} />
-            <ShoppingBasketIcon color="primary" sx={{ fontSize: '2em' }} />
+            <IConsBlock />
           </Grid>
           <Grid item>
-            <Button color="secondary" variant="contained">
-              <LoginIcon />
-            </Button>
+            <Login />
           </Grid>
         </Grid>
       </Container>

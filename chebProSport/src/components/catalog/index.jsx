@@ -1,9 +1,9 @@
-import React from 'react'
-import Item from './item'
-import { Container, Grid } from '@mui/material'
-import catalog from '../../data/catalog'
+import React from 'react';
+import Item from './item';
+import { Container, Grid } from '@mui/material';
+import ImageCatalog from '../../data/catalog';
 
-const Catalog = () => {
+export const Catalog = () => {
   return (
     <div style={{ backgroundColor: '#F7F0F5' }}>
       <Container>
@@ -13,7 +13,7 @@ const Catalog = () => {
           </Grid>
           <Grid item xs={10}>
             <Grid container spacing={3} sx={{ paddingTop: '20px' }}>
-              {catalog.map((item, i) => (
+              {ImageCatalog.map((item, i) => (
                 <Item item={item} key={i}></Item>
               ))}
             </Grid>
@@ -21,7 +21,5 @@ const Catalog = () => {
         </Grid>
       </Container>
     </div>
-  )
-}
-
-export default Catalog
+  );
+};
