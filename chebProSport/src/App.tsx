@@ -34,10 +34,6 @@ function App() {
             ></Route>
             <Route path='/Акции' element={'helloy my Акции'}></Route>
             <Route path='/Доставка' element={'helloy my Доставка'}></Route>
-            <Route
-              path='/Главная'
-              element={<CarouselBlock data={carouselData} />}
-            ></Route>
           </Routes>
         </main>
       </div>

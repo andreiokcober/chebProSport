@@ -11,7 +11,7 @@ const Navigation = () => {
       <CatalogBlock />
       {NAV_ITEMS_LIST.map((item) => (
         <ListItem key={item} disablePadding>
-          <Link to={item}>
+          <Link to={item === 'Главная' ? '' : item}>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText sx={{ margin: '15px 0px' }} primary={item} />
             </ListItemButton>
