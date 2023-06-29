@@ -1,7 +1,7 @@
 import React from 'react';
-import Item from './item';
 import { Container, Grid } from '@mui/material';
-import ImageCatalog from '../../data/catalog';
+import CardsContainer from './cards';
+import CatalogMenu from './catalogMenu';
 
 export const Catalog = () => {
   return (
@@ -9,14 +9,10 @@ export const Catalog = () => {
       <Container>
         <Grid container>
           <Grid item xs={2}>
-            <Grid>Каталог продукции</Grid>
+            <CatalogMenu />
           </Grid>
           <Grid item xs={10}>
-            <Grid container spacing={3} sx={{ paddingTop: '20px' }}>
-              {ImageCatalog.map((item, i) => (
-                <Item item={item} key={i}></Item>
-              ))}
-            </Grid>
+            <CardsContainer />
           </Grid>
         </Grid>
       </Container>
