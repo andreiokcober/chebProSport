@@ -1,8 +1,9 @@
 import React from 'react';
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import CatalogBlock from './catalog';
+import { Link } from 'react-router-dom';
 
-const NAV_ITEMS_LIST = ['Акции', 'Блог', 'Доставка'];
+const NAV_ITEMS_LIST = ['Акции', 'Доставка', 'Главная'];
 
 const Navigation = () => {
   return (
@@ -10,9 +11,11 @@ const Navigation = () => {
       <CatalogBlock />
       {NAV_ITEMS_LIST.map((item) => (
         <ListItem key={item} disablePadding>
-          <ListItemButton sx={{ textAlign: 'center' }}>
-            <ListItemText sx={{ margin: '15px 0px' }} primary={item} />
-          </ListItemButton>
+          <Link to={item}>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText sx={{ margin: '15px 0px' }} primary={item} />
+            </ListItemButton>
+          </Link>
         </ListItem>
       ))}
     </List>
