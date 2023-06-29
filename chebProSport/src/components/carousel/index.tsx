@@ -8,7 +8,7 @@ export type CarouselBlockPops = { data: Array<ItemConfig> };
 
 export const CarouselBlock = ({ data }: CarouselBlockPops) => {
   return (
-    <Container>
+    <Container maxWidth='xl'>
       <Box
         sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}
       >

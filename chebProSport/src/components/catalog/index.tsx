@@ -6,12 +6,12 @@ import CatalogMenu from './catalogMenu';
 export const Catalog = () => {
   return (
     <div style={{ backgroundColor: '#F7F0F5' }}>
-      <Container>
+      <Container maxWidth='xl'>
         <Grid container>
-          <Grid item xs={2}>
+          <Grid item xs={3}>
             <CatalogMenu />
           </Grid>
-          <Grid item xs={10}>
+          <Grid item xs={9}>
             <CardsContainer />
           </Grid>
         </Grid>
