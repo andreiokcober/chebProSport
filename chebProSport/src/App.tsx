@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
+import './index.css';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 
@@ -23,7 +24,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className='App'>
         <Header />
-        <main style={{ backgroundColor: '#F7F0F5', padding: '40px 0px' }}>
+        <main className='main'>
           <Routes>
             <Route path='/' element={<MainPage />}></Route>
             <Route path='/Акции' element={'helloy my Акции'}></Route>

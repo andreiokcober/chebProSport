@@ -9,3 +9,7 @@ a {
 .svg-button-catalog-show {
   transform: rotate(90deg);
 }
+.main {
+  background-color: #f7f0f5;
+  padding: 40px 0px;
+}

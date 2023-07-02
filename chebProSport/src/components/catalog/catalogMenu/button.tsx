@@ -7,8 +7,7 @@ type ButtonMenuConfig = {
 };
 
 const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
-  const { name } = prop;
-  const { content } = prop;
+  const { name, content } = prop;
 
   const [openButton, setOpenButton] = useState<string>('none');
 
