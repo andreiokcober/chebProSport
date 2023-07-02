@@ -5,6 +5,7 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 import { Header } from './components/header';
 import { CarouselBlock } from './components/carousel';
 import img1 from './image/image.png';
+import Footer from './components/footer';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -36,6 +37,7 @@ function App() {
             <Route path='/Доставка' element={'helloy my Доставка'}></Route>
           </Routes>
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );
