@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 import CardsContainer from './cards';
 import CatalogMenu from './catalogMenu';
+import PaginationBlock from './pagination';
 
 export const Catalog = () => {
   return (
@@ -13,6 +14,7 @@ export const Catalog = () => {
           </Grid>
           <Grid item xs={9}>
             <CardsContainer />
+            <PaginationBlock />
           </Grid>
         </Grid>
       </Container>
