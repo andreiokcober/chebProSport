@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, useRef } from 'react';
 import { ListItem, ListItemButton, ListItemText } from '@mui/material';
 
 type ButtonMenuConfig = {
@@ -8,18 +8,16 @@ type ButtonMenuConfig = {
 
 const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
   const { name, content } = prop;
-
   const [openButton, setOpenButton] = useState<string>('none');
+  const svg = useRef<SVGSVGElement | null>(null);
 
-  const handleClickButton = (event: MouseEvent) => {
-    const svg = event.currentTarget.querySelector('.svg-button-catalog');
-
+  const handleClickButton = () => {
     if (openButton === 'block') {
-      svg ? svg.classList.remove('svg-button-catalog-show') : null;
+      svg.current?.classList.remove('svg-button-catalog-show');
       setOpenButton('none');
     } else {
       setOpenButton('block');
-      svg ? svg.classList.add('svg-button-catalog-show') : null;
+      svg.current?.classList.add('svg-button-catalog-show');
     }
   };
 
@@ -40,6 +38,7 @@ const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
             xmlns='http://www.w3.org/2000/svg'
             style={{ marginRight: '10px' }}
             className='svg-button-catalog'
+            ref={svg}
           >
             <path
               d='M0.962078 17.3594V0.640625L9.32145 9L0.962078 17.3594Z'
@@ -54,7 +53,7 @@ const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
           {content.map((item) => {
             return (
               <>
-                <ListItem sx={{ padding: '0' }}>
+                <ListItem key={item} sx={{ padding: '0' }}>
                   <ListItemButton
                     sx={{
                       display: 'flex',
