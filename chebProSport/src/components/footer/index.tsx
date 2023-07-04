@@ -1,6 +1,7 @@
 import { Container, Grid, List, Typography, Link } from '@mui/material';
 import React from 'react';
 import footerImage from '../../image/footerImage.png';
+import './index.css';
 
 const Footer = () => {
   return (
@@ -44,29 +45,36 @@ const Footer = () => {
                   O нас
                 </Typography>
                 <List
+                  className='social-link'
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
                   }}
                 >
                   <Link
+                    underline={'hover'}
+                    className='social-link'
                     color={'textPrimary'}
-                    sx={{ textDecoration: 'none', mb: '5px' }}
-                    href='https://www.google.ru/'
+                    href=''
+                    sx={{ mb: '5px' }}
                   >
                     Instagram
                   </Link>
                   <Link
+                    underline={'hover'}
                     color={'textPrimary'}
-                    sx={{ textDecoration: 'none', mb: '5px' }}
+                    className='social-link'
                     href=''
+                    sx={{ mb: '5px' }}
                   >
                     Youtube
                   </Link>
                   <Link
                     color={'textPrimary'}
-                    sx={{ textDecoration: 'none', mb: '5px' }}
+                    underline={'hover'}
+                    className='social-link'
                     href=''
+                    sx={{ mb: '5px' }}
                   >
                     Tik-tok
                   </Link>
