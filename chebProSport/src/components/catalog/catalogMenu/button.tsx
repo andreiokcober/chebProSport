@@ -8,15 +8,15 @@ type ButtonMenuConfig = {
 
 const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
   const { name, content } = prop;
-  const [openButton, setOpenButton] = useState<string>('none');
+  const [openButton, setOpenButton] = useState<boolean>(false);
   const svg = useRef<SVGSVGElement | null>(null);
 
   const handleClickButton = () => {
-    if (openButton === 'block') {
+    if (openButton) {
       svg.current?.classList.remove('svg-button-catalog-show');
-      setOpenButton('none');
+      setOpenButton(false);
     } else {
-      setOpenButton('block');
+      setOpenButton(true);
       svg.current?.classList.add('svg-button-catalog-show');
     }
   };
@@ -48,28 +48,22 @@ const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
           <ListItemText primary={name} />
         </ListItemButton>
       </ListItem>
-      {content && openButton === 'block' ? (
-        <>
-          {content.map((item) => {
-            return (
-              <>
-                <ListItem key={item} sx={{ padding: '0' }}>
-                  <ListItemButton
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <ListItemText sx={{ marginLeft: '28px' }} primary={item} />
-                  </ListItemButton>
-                </ListItem>
-              </>
-            );
-          })}
-        </>
-      ) : (
-        ''
-      )}
+      {content &&
+        openButton &&
+        content.map((item) => {
+          return (
+            <ListItem key={item} sx={{ padding: '0' }}>
+              <ListItemButton
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <ListItemText sx={{ marginLeft: '28px' }} primary={item} />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
     </>
   );
 };
