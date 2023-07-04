@@ -9,7 +9,7 @@ import Login from './login';
 export const Header = () => {
   return (
     <AppBar color='primary' position='static'>
-      <Container>
+      <Container maxWidth='xl'>
         <Grid
           item
           xs={12}
