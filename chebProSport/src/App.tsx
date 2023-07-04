@@ -2,9 +2,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
+import './index.css';
 import { Header } from './components/header';
-import { CarouselBlock } from './components/carousel';
-import img1 from './image/image.png';
+import { MainPage } from './pages/mainPage';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -19,19 +19,14 @@ const customTheme: ThemeOptions = {
 
 const theme = createTheme(customTheme);
 
-const carouselData = [{ image: img1 }, { image: img1 }, { image: img1 }];
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
         <Header />
-        <main style={{ backgroundColor: '#F7F0F5', padding: '40px 0px' }}>
+        <main className='main'>
           <Routes>
-            <Route
-              path='/'
-              element={<CarouselBlock data={carouselData} />}
-            ></Route>
+            <Route path='/' element={<MainPage />}></Route>
             <Route path='/Акции' element={'helloy my Акции'}></Route>
             <Route path='/Доставка' element={'helloy my Доставка'}></Route>
           </Routes>
