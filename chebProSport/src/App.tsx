@@ -5,6 +5,7 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 import './index.css';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
+import Footer from './components/footer';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -31,6 +32,7 @@ function App() {
             <Route path='/Доставка' element={'helloy my Доставка'}></Route>
           </Routes>
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );
