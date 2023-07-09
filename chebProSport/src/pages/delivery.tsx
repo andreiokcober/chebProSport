@@ -1,12 +1,30 @@
-import { Container, Grid, Typography, Link } from '@mui/material';
 import React from 'react';
+import { Container, Grid, Typography, Link } from '@mui/material';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import img from '../image/delivery/image 16.png';
+
+const breadcrumbs = [
+  <Link underline='hover' key='1' color='inherit' href='/'>
+    Главная
+  </Link>,
+  <Typography key='2' color='text.primary'>
+    Доставка
+  </Typography>,
+];
 
 const Delivery = () => {
   return (
     <Container maxWidth='md'>
       <Grid container spacing={1}>
-        <Grid item xs={12}></Grid>
+        <Grid item xs={12}>
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize='small' />}
+            aria-label='breadcrumb'
+          >
+            {breadcrumbs}
+          </Breadcrumbs>
+        </Grid>
         <Grid item>
           <Grid container>
             <Grid item xs={7}>
