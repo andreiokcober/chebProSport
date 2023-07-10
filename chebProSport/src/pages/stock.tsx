@@ -4,8 +4,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Carousel from 'react-material-ui-carousel';
 import Item from '../components/carousel/Item';
-import img from '../image/stock/image 18.png';
-import '../index.css';
+import img from '../image//stock/image 18.png';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>
@@ -36,6 +35,20 @@ const Stock = () => {
             fullHeightHover={false}
             autoPlay={false}
             sx={{ width: '690px', justifyContent: 'center' }}
+            navButtonsProps={{
+              style: {
+                backgroundColor: 'none',
+                borderRadius: 0,
+                color: '#772BD8',
+                background: 'none',
+              },
+            }}
+            navButtonsWrapperProps={{
+              style: {
+                bottom: '0',
+                top: '',
+              },
+            }}
           >
             {carouselData.map((item, i) => (
               <Item {...item} key={i} />
