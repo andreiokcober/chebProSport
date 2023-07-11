@@ -13,3 +13,6 @@ a {
   background-color: #f7f0f5;
   padding: 40px 0px;
 }
+.css-1v3atkn-MuiCardActions-root > :not(:first-of-type) {
+  margin-left: 0px !important;
+}
