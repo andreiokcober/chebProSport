@@ -19,6 +19,9 @@ const customTheme: ThemeOptions = {
   },
 };
 
+const PROMOTIONS_PATH = '/promotions';
+const DELIVERY_PATH = '/delivery';
+
 const theme = createTheme(customTheme);
 
 function App() {
@@ -29,8 +32,11 @@ function App() {
         <main className='main'>
           <Routes>
             <Route path='/' element={<MainPage />}></Route>
-            <Route path='/Акции' element={'helloy my Акции'}></Route>
-            <Route path='/Доставка' element={<Delivery />}></Route>
+            <Route
+              path={PROMOTIONS_PATH}
+              element={'helloy my Доставка'}
+            ></Route>
+            <Route path={DELIVERY_PATH} element={<Delivery />}></Route>
           </Routes>
         </main>
         <Footer />
