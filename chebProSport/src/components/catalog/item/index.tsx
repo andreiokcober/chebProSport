@@ -6,16 +6,22 @@ import {
   CardActions,
   Grid,
   Box,
+  Link,
 } from '@mui/material';
 import BasketBtn from './basketBtn';
 import FavoriteBtn from './favoriteBtn';
 
 type CardProp = {
   item: {
+    id: number;
     image: string;
     title: string;
     score: number;
     price: string;
+    categories: string;
+    production: string;
+    type: string;
+    description?: string;
   };
 };
 
@@ -39,13 +45,23 @@ const Item = (prop: CardProp) => {
         }}
       >
         <Box
-          sx={{ display: 'flex', justifyContent: 'center', height: '190px' }}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            height: '190px',
+            cursor: 'pointer',
+          }}
         >
-          <img
-            src={item.image}
-            alt='Catalog Card'
-            style={{ paddingTop: '15px' }}
-          />
+          <Link
+            href={`${item.categories}/${item.id}`}
+            sx={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <img
+              src={item.image}
+              alt='Catalog Card'
+              style={{ paddingTop: '15px' }}
+            />
+          </Link>
         </Box>
         <CardContent sx={{ padding: '5px 5px 0px 10px' }}>
           <Typography

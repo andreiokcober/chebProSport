@@ -1,11 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material';
+import { Container, ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 import './index.css';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 import Footer from './components/footer';
+import CardsPage from './pages/сatalogCard/catalogCards';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -18,6 +19,8 @@ const customTheme: ThemeOptions = {
   },
 };
 
+const CARD_TITLE_PATH = '/:categories/:id';
+
 const theme = createTheme(customTheme);
 
 function App() {
@@ -26,11 +29,14 @@ function App() {
       <div className='App'>
         <Header />
         <main className='main'>
-          <Routes>
-            <Route path='/' element={<MainPage />}></Route>
-            <Route path='/Акции' element={'helloy my Акции'}></Route>
-            <Route path='/Доставка' element={'helloy my Доставка'}></Route>
-          </Routes>
+          <Container maxWidth={'xl'}>
+            <Routes>
+              <Route path='/' element={<MainPage />}></Route>
+              <Route path='/Акции' element={'helloy my Акции'}></Route>
+              <Route path='/Доставка' element={'helloy my Доставка'}></Route>
+              <Route path={CARD_TITLE_PATH} element={<CardsPage />}></Route>
+            </Routes>
+          </Container>
         </main>
         <Footer />
       </div>
