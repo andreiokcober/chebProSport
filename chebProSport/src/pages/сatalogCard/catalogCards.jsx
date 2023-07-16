@@ -69,11 +69,13 @@ const CardsPage = () => {
                     marginTop: '5px',
                   }}
                 >
-                  <Button color={'secondary'} sx={{ background: 'none' }}>
+                  <Button sx={{ background: 'none', color: '#000000' }}>
                     Описание
                   </Button>
+
                   <div style={{ fontSize: '1.1em' }}>|</div>
-                  <Button color={'secondary'}>Отзывы</Button>
+
+                  <Button sx={{ color: '#000000' }}>Отзывы</Button>
                 </div>
               </div>
               <div>
