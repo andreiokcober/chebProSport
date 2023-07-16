@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './index.css';
 import { Button, Container, Grid, Link, Typography, Box } from '@mui/material';
@@ -9,7 +9,19 @@ import CardCatalog from '../../data/catalog';
 
 const CardsPage = () => {
   const [post, setPost] = useState({});
+  const [openDescription, setOpenDescription] = useState(true);
   const { id } = useParams();
+
+  const buttonInfo = useRef();
+  const buttonReview = useRef();
+
+  useEffect(() => {
+    CardCatalog.find((item) => {
+      if (item.id.toString() === id) {
+        setPost(item);
+      }
+    });
+  }, [id]);
 
   const breadcrumbs = [
     <Link underline='hover' key='1' color='inherit' href='/'>
@@ -20,13 +32,16 @@ const CardsPage = () => {
     </Typography>,
   ];
 
-  useEffect(() => {
-    CardCatalog.find((item) => {
-      if (item.id.toString() === id) {
-        setPost(item);
-      }
-    });
-  }, [id]);
+  const handlerButtonInfo = () => {
+    setOpenDescription(true);
+    buttonReview.current.classList.remove('active-btn');
+    buttonInfo.current.classList.add('active-btn');
+  };
+  const handlerButtonReview = () => {
+    setOpenDescription(false);
+    buttonInfo.current.classList.remove('active-btn');
+    buttonReview.current.classList.add('active-btn');
+  };
 
   return (
     <Container maxWidth={'lg'}>
@@ -69,13 +84,22 @@ const CardsPage = () => {
                     marginTop: '5px',
                   }}
                 >
-                  <Button sx={{ background: 'none', color: '#000000' }}>
+                  <Button
+                    className='active-btn'
+                    onClick={handlerButtonInfo}
+                    ref={buttonInfo}
+                    sx={{ background: 'none', color: '#000000' }}
+                  >
                     Описание
                   </Button>
-
                   <div style={{ fontSize: '1.1em' }}>|</div>
-
-                  <Button sx={{ color: '#000000' }}>Отзывы</Button>
+                  <Button
+                    onClick={handlerButtonReview}
+                    ref={buttonReview}
+                    sx={{ color: '#000000' }}
+                  >
+                    Отзывы
+                  </Button>
                 </div>
               </div>
               <div>
@@ -110,7 +134,7 @@ const CardsPage = () => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          {post.description}
+          {openDescription ? post.description : 'Отзывы пока отсутствуют'}
         </Grid>
       </Grid>
     </Container>

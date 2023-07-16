@@ -11,7 +11,7 @@ import {
 import BasketBtn from './basketBtn';
 import FavoriteBtn from './favoriteBtn';
 
-type CardProp = {
+export type CardProp = {
   item: {
     id: number;
     image: string;
