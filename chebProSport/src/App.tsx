@@ -6,6 +6,7 @@ import './index.css';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 import Footer from './components/footer';
+import Favorite from './pages/favorite';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -17,6 +18,8 @@ const customTheme: ThemeOptions = {
     },
   },
 };
+
+export const FAVORITE_PATH = '/favorite';
 
 const theme = createTheme(customTheme);
 
@@ -30,6 +33,7 @@ function App() {
             <Route path='/' element={<MainPage />}></Route>
             <Route path='/Акции' element={'helloy my Акции'}></Route>
             <Route path='/Доставка' element={'helloy my Доставка'}></Route>
+            <Route path={FAVORITE_PATH} element={<Favorite />}></Route>
           </Routes>
         </main>
         <Footer />

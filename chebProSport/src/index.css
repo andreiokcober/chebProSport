@@ -13,3 +13,6 @@ a {
   background-color: #f7f0f5;
   padding: 40px 0px;
 }
+.MuiSvgIcon-root:hover {
+  color: rgb(83, 30, 151);
+}
