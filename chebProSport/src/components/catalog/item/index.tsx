@@ -21,6 +21,7 @@ export type CardProp = {
     categories: string;
     production: string;
     type: string;
+    weight: string;
     description?: string;
   };
 };
