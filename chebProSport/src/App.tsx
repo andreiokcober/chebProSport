@@ -7,6 +7,7 @@ import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 import Footer from './components/footer';
 import Delivery from './pages/delivery';
+import Stock from './pages/stock';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -32,10 +33,7 @@ function App() {
         <main className='main'>
           <Routes>
             <Route path='/' element={<MainPage />}></Route>
-            <Route
-              path={PROMOTIONS_PATH}
-              element={'helloy my Доставка'}
-            ></Route>
+            <Route path={PROMOTIONS_PATH} element={<Stock />}></Route>
             <Route path={DELIVERY_PATH} element={<Delivery />}></Route>
           </Routes>
         </main>
