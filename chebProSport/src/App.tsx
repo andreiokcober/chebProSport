@@ -35,10 +35,10 @@ function App() {
         <main className='main'>
           <Container maxWidth={'xl'}>
             <Routes>
-              <Route path='/' element={<MainPage />}></Route>
-              <Route path={PROMOTIONS_PATH} element={<Stock />}></Route>
-              <Route path={DELIVERY_PATH} element={<Delivery />}></Route>
-              <Route path={CARD_TITLE_PATH} element={<CardsPage />}></Route>
+              <Route path='/' element={<MainPage />} />
+              <Route path={PROMOTIONS_PATH} element={<Stock />} />
+              <Route path={DELIVERY_PATH} element={<Delivery />} />
+              <Route path={CARD_TITLE_PATH} element={<CardsPage />} />
             </Routes>
           </Container>
         </main>
