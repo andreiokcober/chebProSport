@@ -6,7 +6,13 @@ import './index.css';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 import Footer from './components/footer';
+import Delivery from './pages/delivery';
+import Stock from './pages/stock';
 import CardsPage from './pages/сatalogCard/catalogCards';
+
+const PROMOTIONS_PATH = '/promotions';
+const DELIVERY_PATH = '/delivery';
+const CARD_TITLE_PATH = '/:categories/:id';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -19,8 +25,6 @@ const customTheme: ThemeOptions = {
   },
 };
 
-const CARD_TITLE_PATH = '/:categories/:id';
-
 const theme = createTheme(customTheme);
 
 function App() {
@@ -32,8 +36,8 @@ function App() {
           <Container maxWidth={'xl'}>
             <Routes>
               <Route path='/' element={<MainPage />}></Route>
-              <Route path='/Акции' element={'helloy my Акции'}></Route>
-              <Route path='/Доставка' element={'helloy my Доставка'}></Route>
+              <Route path={PROMOTIONS_PATH} element={<Stock />}></Route>
+              <Route path={DELIVERY_PATH} element={<Delivery />}></Route>
               <Route path={CARD_TITLE_PATH} element={<CardsPage />}></Route>
             </Routes>
           </Container>
