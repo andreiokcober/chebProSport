@@ -7,6 +7,8 @@ import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
 import Footer from './components/footer';
 import Favorite from './pages/favorite';
+import Delivery from './pages/delivery';
+import Stock from './pages/stock';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -19,6 +21,8 @@ const customTheme: ThemeOptions = {
   },
 };
 
+const PROMOTIONS_PATH = '/promotions';
+const DELIVERY_PATH = '/delivery';
 export const FAVORITE_PATH = '/favorite';
 
 const theme = createTheme(customTheme);
@@ -30,10 +34,10 @@ function App() {
         <Header />
         <main className='main'>
           <Routes>
-            <Route path='/' element={<MainPage />}></Route>
-            <Route path='/Акции' element={'helloy my Акции'}></Route>
-            <Route path='/Доставка' element={'helloy my Доставка'}></Route>
-            <Route path={FAVORITE_PATH} element={<Favorite />}></Route>
+            <Route path='/' element={<MainPage />} />
+            <Route path={PROMOTIONS_PATH} element={<Stock />} />
+            <Route path={DELIVERY_PATH} element={<Delivery />} />
+            <Route path={FAVORITE_PATH} element={<Favorite />} />
           </Routes>
         </main>
         <Footer />
