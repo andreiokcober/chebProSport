@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { Button, Badge } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useGlobalContext } from '..';
 
 const FavoriteBtn = () => {
+  const { count, setCount } = useGlobalContext();
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const handelFavorite = () => {
-    isFavorite ? setIsFavorite(false) : setIsFavorite(true);
+    if (isFavorite) {
+      setIsFavorite(false);
+      setCount(count - 1);
+    } else {
+      setIsFavorite(true);
+      setCount(count + 1);
+    }
   };
 
   return (

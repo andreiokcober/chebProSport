@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
@@ -9,6 +9,7 @@ import Footer from './components/footer';
 import Favorite from './pages/favorite';
 import Delivery from './pages/delivery';
 import Stock from './pages/stock';
+import { MyGlobalContext } from './components/catalog';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -28,20 +29,24 @@ export const FAVORITE_PATH = '/favorite';
 const theme = createTheme(customTheme);
 
 function App() {
+  const [count, setCount] = useState<number>(0);
+
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
-        <Header />
-        <main className='main'>
-          <Routes>
-            <Route path='/' element={<MainPage />} />
-            <Route path={PROMOTIONS_PATH} element={<Stock />} />
-            <Route path={DELIVERY_PATH} element={<Delivery />} />
-            <Route path={FAVORITE_PATH} element={<Favorite />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <MyGlobalContext.Provider value={{ count, setCount }}>
+        <div className='App'>
+          <Header />
+          <main className='main'>
+            <Routes>
+              <Route path='/' element={<MainPage />} />
+              <Route path={PROMOTIONS_PATH} element={<Stock />} />
+              <Route path={DELIVERY_PATH} element={<Delivery />} />
+              <Route path={FAVORITE_PATH} element={<Favorite />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </MyGlobalContext.Provider>
     </ThemeProvider>
   );
 }
