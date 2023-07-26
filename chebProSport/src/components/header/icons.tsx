@@ -4,8 +4,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../../AppRoutes';
-import PATHS from '../../store/AppPath';
+import { useGlobalContext } from '../../store/AppStore';
+import PATHS from '../../AppRoutes';
 
 const IConsBlock = () => {
   const { count } = useGlobalContext();

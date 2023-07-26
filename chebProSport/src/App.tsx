@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 import './index.css';
-import AppRoutes, { MyGlobalContext } from './AppRoutes';
+import AppRoutes, { MyGlobalContext } from './store/AppStore';
 
 const customTheme: ThemeOptions = {
   palette: {

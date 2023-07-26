@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Badge } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useGlobalContext } from '../../../AppRoutes';
+import { useGlobalContext } from '../../../store/AppStore';
 
 const FavoriteBtn = () => {
   const { count, setCount } = useGlobalContext();
