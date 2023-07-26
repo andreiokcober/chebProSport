@@ -4,14 +4,14 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
-import { FAVORITE_PATH } from '../../App';
-import { useGlobalContext } from '../catalog';
+import { useGlobalContext } from '../../AppRoutes';
+import PATHS from '../../store/AppPath';
 
 const IConsBlock = () => {
   const { count } = useGlobalContext();
   return (
     <Box sx={{ display: 'flex' }}>
-      <Link to={FAVORITE_PATH}>
+      <Link to={PATHS.FAVORITE_PATH}>
         <Badge badgeContent={count} color='secondary'>
           <FavoriteIcon color='secondary' sx={{ fontSize: '2em' }} />
         </Badge>
