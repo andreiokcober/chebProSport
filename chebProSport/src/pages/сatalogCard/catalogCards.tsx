@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './index.css';
-import { Button, Container, Grid, Link, Typography, Box } from '@mui/material';
+import { Container, Grid, Link, Typography, Box } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import BasketBtn from '../../components/catalog/item/basketBtn';
 import CardCatalog from '../../data/catalog';
 import { CardProp } from '../../components/catalog/item';
+import BasicTabs from './tabs/tabsCard';
 
 const CardsPage = () => {
   const [post, setPost] = useState<CardProp>({
@@ -23,11 +24,8 @@ const CardsPage = () => {
       description: '',
     },
   });
-  const [openDescription, setOpenDescription] = useState(true);
-  const { id } = useParams();
 
-  const buttonInfo = useRef<HTMLButtonElement>(null);
-  const buttonReview = useRef<HTMLButtonElement>(null);
+  const { id } = useParams();
 
   useEffect(() => {
     CardCatalog.find((item) => {
@@ -46,17 +44,6 @@ const CardsPage = () => {
     </Typography>,
   ];
 
-  const handlerButtonInfo = () => {
-    setOpenDescription(true);
-    buttonReview.current?.classList.remove('active-btn');
-    buttonInfo.current?.classList.add('active-btn');
-  };
-  const handlerButtonReview = () => {
-    setOpenDescription(false);
-    buttonInfo.current?.classList.remove('active-btn');
-    buttonReview.current?.classList.add('active-btn');
-  };
-
   return (
     <Container maxWidth={'lg'}>
       <Grid container spacing={3}>
@@ -74,53 +61,16 @@ const CardsPage = () => {
         <Grid item xs={12}>
           <Grid container>
             <Grid item sx={{ display: 'flex', flexGrow: '1' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'baseline',
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'start',
-                    marginRight: '40px',
-                  }}
-                >
+              <Box>
+                <Box sx={{ marginRight: '40px' }}>
                   <img
                     style={{ width: '180px' }}
                     src={post.item.image}
-                    alt=''
+                    alt='image-card'
                   />
-                </div>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'start',
-                    alignItems: 'center',
-                    marginTop: '5px',
-                  }}
-                >
-                  <Button
-                    className='active-btn'
-                    onClick={handlerButtonInfo}
-                    ref={buttonInfo}
-                    sx={{ background: 'none', color: '#000000' }}
-                  >
-                    Описание
-                  </Button>
-                  <div style={{ fontSize: '1.1em' }}>|</div>
-                  <Button
-                    onClick={handlerButtonReview}
-                    ref={buttonReview}
-                    sx={{ color: '#000000' }}
-                  >
-                    Отзывы
-                  </Button>
-                </div>
-              </div>
-              <div>
+                </Box>
+              </Box>
+              <Box>
                 <Typography
                   variant='body2'
                   component={'div'}
@@ -137,7 +87,7 @@ const CardsPage = () => {
                 <Typography component={'p'} variant='body2'>
                   Производсто: {post.item.production}
                 </Typography>
-              </div>
+              </Box>
             </Grid>
             <Grid item>
               <Typography sx={{ textAlign: 'center', mb: '5px' }}>
@@ -151,10 +101,10 @@ const CardsPage = () => {
                 <BasketBtn />
               </Box>
             </Grid>
+            <Grid item xs={12}>
+              <BasicTabs description={post.item.description} />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          {openDescription ? post.item.description : 'Отзывы пока отсутствуют'}
         </Grid>
       </Grid>
     </Container>
