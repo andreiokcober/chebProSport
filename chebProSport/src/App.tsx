@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 import './index.css';
-import AppRoutes from './AppRoutes';
+import AppRoutes, { MyGlobalContext } from './AppRoutes';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -18,11 +18,15 @@ const customTheme: ThemeOptions = {
 const theme = createTheme(customTheme);
 
 function App() {
+  const [count, setCount] = useState<number>(0);
+
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
-        <AppRoutes />
-      </div>
+      <MyGlobalContext.Provider value={{ count, setCount }}>
+        <div className='App'>
+          <AppRoutes />
+        </div>
+      </MyGlobalContext.Provider>
     </ThemeProvider>
   );
 }

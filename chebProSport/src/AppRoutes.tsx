@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/header';
 import { MainPage } from './pages/mainPage';
@@ -22,10 +22,8 @@ export const MyGlobalContext = createContext<GlobalContent>({
 });
 
 const AppRoutes = () => {
-  const [count, setCount] = useState<number>(0);
-
   return (
-    <MyGlobalContext.Provider value={{ count, setCount }}>
+    <div>
       <Header />
       <main className='main'>
         <Routes>
@@ -36,7 +34,7 @@ const AppRoutes = () => {
         </Routes>
       </main>
       <Footer />
-    </MyGlobalContext.Provider>
+    </div>
   );
 };
 
