@@ -1,12 +1,8 @@
-import { Typography, Box } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 
 const Review = () => {
-  return (
-    <Box>
-      <Typography>Компонент отзывов </Typography>
-    </Box>
-  );
+  return <Typography component={'span'}>Компонент отзывов</Typography>;
 };
 
 export default Review;
