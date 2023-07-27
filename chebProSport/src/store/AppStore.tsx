@@ -7,6 +7,7 @@ import Favorite from '../pages/favorite';
 import Delivery from '../pages/delivery';
 import Stock from '../pages/stock';
 import PATHS from '../AppRoutes';
+import CardsPage from '../pages/сatalogCard/catalogCards';
 
 export const useGlobalContext = () => useContext(MyGlobalContext);
 export type GlobalContent = {
@@ -21,7 +22,7 @@ export const MyGlobalContext = createContext<GlobalContent>({
   },
 });
 
-const AppRoutes = () => {
+const AppStore = () => {
   return (
     <div>
       <Header />
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path='/' element={<MainPage />} />
           <Route path={PATHS.PROMOTIONS_PATH} element={<Stock />} />
           <Route path={PATHS.DELIVERY_PATH} element={<Delivery />} />
+          <Route path={PATHS.PRODUCT_DETALIES} element={<CardsPage />} />
           <Route path={PATHS.FAVORITE_PATH} element={<Favorite />} />
         </Routes>
       </main>
@@ -38,4 +40,4 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+export default AppStore;
