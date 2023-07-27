@@ -1,15 +1,17 @@
 import React from 'react';
-import { CarouselBlock } from '../components/carousel/index';
-import img1 from '../image/image.png';
+import { CarouselBlock } from '../components/carousel';
 import { Catalog } from '../components/catalog';
+
+import img1 from '../image/image.png';
 
 const carouselData = [{ image: img1 }, { image: img1 }, { image: img1 }];
 
-export const MainPage = () => {
+const MainPage = () => {
   return (
-    <div>
+    <>
       <CarouselBlock data={carouselData} />
       <Catalog />
-    </div>
+    </>
   );
 };
+export default MainPage;
