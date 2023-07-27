@@ -76,16 +76,6 @@ const Item = (prop: CardProp) => {
           <Typography variant='body1' component={'span'} color='secondary'>
             {item.price}
           </Typography>
-        </CardContent>
-        <CardActions
-          sx={{
-            paddingTop: '2px',
-            mt: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-          }}
-        >
           <Typography
             variant='body2'
             component={'div'}
@@ -93,14 +83,10 @@ const Item = (prop: CardProp) => {
           >
             в наличии {item.score}
           </Typography>
-          <Box
-            sx={{
-              marginLeft: '0',
-            }}
-          >
-            <BasketBtn />
-            <FavoriteBtn />
-          </Box>
+        </CardContent>
+        <CardActions>
+          <BasketBtn />
+          <FavoriteBtn />
         </CardActions>
       </Card>
     </Grid>

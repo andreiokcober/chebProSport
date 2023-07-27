@@ -5,18 +5,18 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Review from './review';
 
-interface TabPanelProps {
+type TabPanelProps = {
   children?: React.ReactNode;
   index: number;
   value: number;
-}
-
-type TabPanelInfo = {
-  description: string | undefined;
-  review?: string | undefined;
 };
 
-function CustomTabPanel(props: TabPanelProps) {
+type TabPanelInfo = {
+  description?: string;
+  review?: string;
+};
+
+const CustomTabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -34,7 +34,7 @@ function CustomTabPanel(props: TabPanelProps) {
       )}
     </div>
   );
-}
+};
 
 function a11yProps(index: number) {
   return {
@@ -43,7 +43,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function BasicTabs(props: TabPanelInfo) {
+const BasicTabs = (props: TabPanelInfo) => {
   const { description } = props;
   const [value, setValue] = React.useState(0);
 
@@ -73,4 +73,6 @@ export default function BasicTabs(props: TabPanelInfo) {
       </CustomTabPanel>
     </Box>
   );
-}
+};
+
+export default BasicTabs;
