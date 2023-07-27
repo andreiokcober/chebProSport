@@ -20,7 +20,12 @@ const FavoriteBtn = () => {
     <Button
       onClick={handelFavorite}
       size='small'
-      sx={{ fontSize: '10px', textDecoration: 'underline', color: 'black' }}
+      sx={{
+        fontSize: '10px',
+        textDecoration: 'underline',
+        color: 'black',
+        ml: '10px',
+      }}
     >
       <Badge
         badgeContent={
