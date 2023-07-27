@@ -12,7 +12,7 @@ const IConsBlock = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <Link to={PATHS.FAVORITE_PATH}>
-        <Badge badgeContent={count} color='secondary'>
+        <Badge badgeContent={count.length} color='secondary'>
           <FavoriteIcon color='secondary' sx={{ fontSize: '2em' }} />
         </Badge>
       </Link>

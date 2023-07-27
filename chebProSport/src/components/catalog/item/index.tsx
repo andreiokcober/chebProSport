@@ -87,7 +87,7 @@ const Item = (prop: CardProp) => {
         </CardContent>
         <CardActions>
           <BasketBtn />
-          <FavoriteBtn />
+          <FavoriteBtn id={item.id} />
         </CardActions>
       </Card>
     </Grid>

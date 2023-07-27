@@ -18,7 +18,7 @@ const customTheme: ThemeOptions = {
 const theme = createTheme(customTheme);
 
 function App() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<Array<number>>([]);
 
   return (
     <ThemeProvider theme={theme}>

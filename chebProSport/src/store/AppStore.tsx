@@ -11,15 +11,14 @@ import CardsPage from '../pages/сatalogCard/catalogCards';
 
 export const useGlobalContext = () => useContext(MyGlobalContext);
 export type GlobalContent = {
-  count: number;
-  setCount: (count: number) => void;
+  count: Array<number>;
+  setCount: (count: Array<number>) => void;
 };
 
 export const MyGlobalContext = createContext<GlobalContent>({
-  count: 0,
-  setCount: () => {
-    0;
-  },
+  count: [0],
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setCount: () => {},
 });
 
 const AppStore = () => {
