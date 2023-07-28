@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
+
+import AppStore from './store/AppStore';
+import Header from './components/header';
+import Footer from './components/footer';
+
 import './index.css';
-import AppStore, { MyGlobalContext } from './store/AppStore';
+import { PATH_CONFIG } from './routes/routeConfig';
 
 const customTheme: ThemeOptions = {
   palette: {
@@ -18,15 +24,22 @@ const customTheme: ThemeOptions = {
 const theme = createTheme(customTheme);
 
 function App() {
-  const [count, setCount] = useState<Array<number>>([]);
-
   return (
     <ThemeProvider theme={theme}>
-      <MyGlobalContext.Provider value={{ count, setCount }}>
-        <div className='App'>
-          <AppStore />
-        </div>
-      </MyGlobalContext.Provider>
+      <AppStore>
+        <Header />
+        <main className='main'>
+          <Routes>
+            {PATH_CONFIG.map(
+              ({ path, component: Component, isShow }) =>
+                isShow && (
+                  <Route key={path} path={path} element={<Component />} />
+                ),
+            )}
+          </Routes>
+        </main>
+        <Footer />
+      </AppStore>
     </ThemeProvider>
   );
 }
