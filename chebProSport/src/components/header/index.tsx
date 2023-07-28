@@ -1,12 +1,13 @@
 import React from 'react';
 import { AppBar, Container, Box, Typography, Grid } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
 import Navigation from './catalog';
 import Search from './search';
 import IConsBlock from './icons';
 import Login from './login';
 
-export const Header = () => {
+const Header = () => {
   return (
     <AppBar color='primary' position='static'>
       <Container maxWidth='xl'>
@@ -47,3 +48,5 @@ export const Header = () => {
     </AppBar>
   );
 };
+
+export default Header;

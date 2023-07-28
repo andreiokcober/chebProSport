@@ -19,6 +19,7 @@ export type CardProp = {
     score: number;
     price: string;
     categories: string;
+    categoriesSlug?: string;
     production: string;
     type: string;
     weight: string;
@@ -54,7 +55,7 @@ const Item = (prop: CardProp) => {
           }}
         >
           <Link
-            href={`${item.categories}/${item.id}`}
+            href={`${item.categoriesSlug}/${item.id}`}
             sx={{ display: 'flex', justifyContent: 'center' }}
           >
             <img
