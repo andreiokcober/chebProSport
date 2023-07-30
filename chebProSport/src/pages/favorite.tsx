@@ -71,6 +71,7 @@ const Favorite = () => {
                     display: 'flex',
                     flexDirection: 'column',
                   }}
+                  key={item}
                 >
                   <Box
                     sx={{

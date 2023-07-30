@@ -16,7 +16,7 @@ export const GlobalContext = createContext<GlobalContentValue>(
 export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppStore = ({ children }: GlobalContentType) => {
-  const [count, setCount] = useState([0]);
+  const [count, setCount] = useState<number[]>([]);
 
   return (
     <GlobalContext.Provider value={{ count, setCount }}>
