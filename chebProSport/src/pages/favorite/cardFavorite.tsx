@@ -24,9 +24,7 @@ const CardFavorite = () => {
           <>
             <Card
               sx={{
-                maxWidth: '245px',
-                height: 'auto',
-                flexGrow: '1',
+                width: '235px',
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative',

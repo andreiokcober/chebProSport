@@ -1,12 +1,14 @@
 import React from 'react';
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import CatalogBlock from './catalog';
 import { Link } from 'react-router-dom';
+import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+
+import CatalogBlock from './catalog';
+import PATHS from '../../../routes/AppRoutes';
 
 const NAV_ITEMS_LIST = [
-  { name: 'Акции', path: 'promotions' },
-  { name: 'Доставка', path: 'delivery' },
-  { name: 'Главная', path: '/' },
+  { name: 'Акции', path: PATHS.PROMOTIONS_PATH },
+  { name: 'Доставка', path: PATHS.DELIVERY_PATH },
+  { name: 'Главная', path: PATHS.BASE },
 ];
 
 const Navigation = () => {

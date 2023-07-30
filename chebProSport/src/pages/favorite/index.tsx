@@ -47,7 +47,7 @@ const Favorite = () => {
           sx={{
             display: 'flex',
             justifyContent: 'start',
-            columnGap: '20px',
+            gap: '20px',
             flexWrap: 'wrap',
           }}
         >
