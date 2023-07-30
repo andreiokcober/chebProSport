@@ -10,7 +10,6 @@ const CardFavorite = () => {
   const { count, setCount } = useGlobalContext();
 
   const deleteCard = (id: number | undefined) => {
-    console.log('delete card');
     const filterCount = count.filter((item) => item !== id);
     setCount(filterCount);
   };

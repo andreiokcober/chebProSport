@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Grid, Link, Typography } from '@mui/material';
+import { Container, Grid, Link, Typography, Box } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
+import { useGlobalContext } from '../../store/AppStore';
 import CardFavorite from './cardFavorite';
 
 const breadcrumbs = [
@@ -15,6 +16,8 @@ const breadcrumbs = [
   </Typography>,
 ];
 const Favorite = () => {
+  const { setCount } = useGlobalContext();
+
   return (
     <Container maxWidth={'md'}>
       <Grid container spacing={2}>
@@ -32,7 +35,9 @@ const Favorite = () => {
               <Typography component={'p'} sx={{ mr: '5px' }}>
                 Удалить товары из избранного
               </Typography>
-              <HighlightOffIcon />
+              <Box onClick={() => setCount([])}>
+                <HighlightOffIcon />
+              </Box>
             </Grid>
           </Grid>
         </Grid>
