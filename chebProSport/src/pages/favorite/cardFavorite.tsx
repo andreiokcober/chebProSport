@@ -1,16 +1,25 @@
 import React from 'react';
 import { Card, Box, CardContent, CardActions, Typography } from '@mui/material';
 
-import BasketBtn from '../components/catalog/item/basketBtn';
-import { useGlobalContext } from '../store/AppStore';
-import CardCatalog from '../data/catalog';
+import BasketBtn from '../../components/catalog/item/basketBtn';
+import { useGlobalContext } from '../../store/AppStore';
+import CardCatalog from '../../data/catalog';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 const CardFavorite = () => {
-  const { count } = useGlobalContext();
+  const { count, setCount } = useGlobalContext();
+
+  const deleteCard = (id: number | undefined) => {
+    console.log('delete card');
+    const filterCount = count.filter((item) => item !== id);
+    setCount(filterCount);
+  };
+
   return (
     <>
       {count.map((item) => {
         const cardObj = CardCatalog.find((card) => card.id === item);
+        const id = cardObj?.id;
 
         return (
           <>
@@ -21,6 +30,7 @@ const CardFavorite = () => {
                 flexGrow: '1',
                 display: 'flex',
                 flexDirection: 'column',
+                position: 'relative',
               }}
               key={item}
             >
@@ -65,6 +75,12 @@ const CardFavorite = () => {
               <CardActions>
                 <BasketBtn />
               </CardActions>
+              <Box
+                sx={{ position: 'absolute', right: 5, top: 5 }}
+                onClick={() => deleteCard(id)}
+              >
+                <HighlightOffIcon />
+              </Box>
             </Card>
           </>
         );
