@@ -16,7 +16,7 @@ const breadcrumbs = [
   </Typography>,
 ];
 const Favorite = () => {
-  const { setCount } = useGlobalContext();
+  const { count, setCount } = useGlobalContext();
 
   return (
     <Container maxWidth={'md'}>
@@ -51,7 +51,11 @@ const Favorite = () => {
             flexWrap: 'wrap',
           }}
         >
-          <CardFavorite />
+          {count.length != 0 ? (
+            <CardFavorite />
+          ) : (
+            <Typography>У вас отсутствуют товары</Typography>
+          )}
         </Grid>
       </Grid>
     </Container>
