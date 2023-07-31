@@ -5,7 +5,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 import { useGlobalContext } from '../../store/AppStore';
-import CardFavorite from './cardFavorite';
+import CardFavorite from './CardFavorite';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>
@@ -16,7 +16,7 @@ const breadcrumbs = [
   </Typography>,
 ];
 const Favorite = () => {
-  const { count, setCount } = useGlobalContext();
+  const { FavoriteCount, setFavoriteCount } = useGlobalContext();
 
   return (
     <Container maxWidth={'md'}>
@@ -35,7 +35,7 @@ const Favorite = () => {
               <Typography component={'p'} sx={{ mr: '5px' }}>
                 Удалить товары из избранного
               </Typography>
-              <Box onClick={() => setCount([])}>
+              <Box onClick={() => setFavoriteCount([])}>
                 <HighlightOffIcon />
               </Box>
             </Grid>
@@ -51,7 +51,7 @@ const Favorite = () => {
             flexWrap: 'wrap',
           }}
         >
-          {count.length != 0 ? (
+          {FavoriteCount.length != 0 ? (
             <CardFavorite />
           ) : (
             <Typography>У вас отсутствуют товары</Typography>

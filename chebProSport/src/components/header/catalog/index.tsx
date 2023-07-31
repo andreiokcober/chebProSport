@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 
-import CatalogBlock from './catalog';
+import CatalogBlock from './Catalog';
 import PATHS from '../../../routes/AppRoutes';
 
 const NAV_ITEMS_LIST = [

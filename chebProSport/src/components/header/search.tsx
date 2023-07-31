@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Input } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+
 const Search = () => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'end' }}>

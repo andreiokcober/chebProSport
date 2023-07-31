@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Badge } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { useGlobalContext } from '../../../store/AppStore';
 
 type FavoriteProp = {
@@ -8,13 +9,13 @@ type FavoriteProp = {
 };
 
 const FavoriteBtn = ({ id }: FavoriteProp) => {
-  const { count, setCount } = useGlobalContext();
+  const { FavoriteCount, setFavoriteCount } = useGlobalContext();
   const handelFavorite = () => {
-    if (count.includes(+id)) {
-      const newCount = count.filter((item) => item !== id);
-      setCount(newCount);
+    if (FavoriteCount.includes(+id)) {
+      const newCount = FavoriteCount.filter((item) => item !== id);
+      setFavoriteCount(newCount);
     } else {
-      setCount(prevCount => [...prevCount, id]);
+      setFavoriteCount((prevCount) => [...prevCount, id]);
     }
   };
 
@@ -31,7 +32,9 @@ const FavoriteBtn = ({ id }: FavoriteProp) => {
     >
       <Badge
         badgeContent={
-          <FavoriteIcon color={count.includes(id) ? 'error' : 'secondary'} />
+          <FavoriteIcon
+            color={FavoriteCount.includes(id) ? 'error' : 'secondary'}
+          />
         }
       >
         Добавить

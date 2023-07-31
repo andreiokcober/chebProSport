@@ -1,5 +1,6 @@
 import React from 'react';
-import { ItemConfig } from './index';
+
+import { ItemConfig } from './Index';
 
 const Item = ({ image }: ItemConfig) => {
   return (

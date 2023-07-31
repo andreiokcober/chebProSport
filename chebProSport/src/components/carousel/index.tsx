@@ -1,12 +1,13 @@
 import React from 'react';
-import Item from './Item';
 import Carousel from 'react-material-ui-carousel';
 import { Container, Box, Typography } from '@mui/material';
+
+import Item from './Item';
 
 export type ItemConfig = { image: string };
 export type CarouselBlockPops = { data: Array<ItemConfig> };
 
-export const CarouselBlock = ({ data }: CarouselBlockPops) => {
+const CarouselBlock = ({ data }: CarouselBlockPops) => {
   return (
     <Container maxWidth='xl'>
       <Box
@@ -32,3 +33,5 @@ export const CarouselBlock = ({ data }: CarouselBlockPops) => {
     </Container>
   );
 };
+
+export default CarouselBlock;

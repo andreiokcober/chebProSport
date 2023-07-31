@@ -7,10 +7,10 @@ import {
   CardActions,
   Grid,
   Box,
-  // Link,
 } from '@mui/material';
-import BasketBtn from './basketBtn';
-import FavoriteBtn from './favoriteBtn';
+
+import BasketBtn from './BasketBtn';
+import FavoriteBtn from './FavoriteBtn';
 
 export type CardProp = {
   item: {
@@ -57,7 +57,7 @@ const Item = (prop: CardProp) => {
         >
           <Link
             to={`${item.categoriesSlug}/${item.id}`}
-            // sx={{ display: 'flex', justifyContent: 'center' }}
+            style={{ display: 'flex', justifyContent: 'center' }}
           >
             <img
               src={item.image}

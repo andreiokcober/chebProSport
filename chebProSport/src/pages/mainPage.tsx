@@ -1,6 +1,7 @@
 import React from 'react';
-import { CarouselBlock } from '../components/carousel';
-import { Catalog } from '../components/catalog';
+
+import CarouselBlock from '../components/Carousel/Index';
+import Catalog from '../components/Catalog/Index';
 
 import img1 from '../image/image.png';
 

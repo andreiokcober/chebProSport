@@ -1,9 +1,11 @@
 import React from 'react';
+import Carousel from 'react-material-ui-carousel';
 import { Grid, Typography, Link, Container } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import Carousel from 'react-material-ui-carousel';
-import Item from '../components/carousel/Item';
+
+import Item from '../components/Carousel/Item';
+
 import img from '../image//stock/image 18.png';
 
 const breadcrumbs = [
