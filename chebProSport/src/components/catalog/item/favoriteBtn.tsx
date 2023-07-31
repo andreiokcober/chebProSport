@@ -9,13 +9,12 @@ type FavoriteProp = {
 
 const FavoriteBtn = ({ id }: FavoriteProp) => {
   const { count, setCount } = useGlobalContext();
-
   const handelFavorite = () => {
-    if (count.includes(id)) {
+    if (count.includes(+id)) {
       const newCount = count.filter((item) => item !== id);
       setCount(newCount);
     } else {
-      setCount([...count, id]);
+      setCount(prevCount => [...prevCount, id]);
     }
   };
 
