@@ -4,6 +4,7 @@ import { Button, Menu, MenuItem, Fade } from '@mui/material';
 const CatalogBlock = () => {
   const [anchorEl, setAnchorEl] = useState<null | Element>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
