@@ -33,20 +33,19 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <MyGlobalContext.Provider value={{ count, setCount }}>
-        <div className='App'>
-          <Header />
-          <main className='main'>
-            <Routes>
-              <Route path='/' element={<MainPage />} />
-              <Route path={PROMOTIONS_PATH} element={<Stock />} />
-              <Route path={DELIVERY_PATH} element={<Delivery />} />
-              <Route path={FAVORITE_PATH} element={<Favorite />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </MyGlobalContext.Provider>
+      <MyGlobalContext.Provider value={{ count, setCount }} />
+      <div className='App'>
+        <Header />
+        <main className='main'>
+          <Routes>
+            <Route path='/' element={<MainPage />} />
+            <Route path={PROMOTIONS_PATH} element={<Stock />} />
+            <Route path={DELIVERY_PATH} element={<Delivery />} />
+            <Route path={FAVORITE_PATH} element={<Favorite />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
