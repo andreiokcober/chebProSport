@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container, Grid, Link, Typography } from '@mui/material';
+import { Container, Grid, Link, Typography, Box } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+
+import { useGlobalContext } from '../../store/AppStore';
+import CardFavorite from './cardFavorite';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>
@@ -12,8 +15,9 @@ const breadcrumbs = [
     Доставка
   </Typography>,
 ];
-
 const Favorite = () => {
+  const { count, setCount } = useGlobalContext();
+
   return (
     <Container maxWidth={'md'}>
       <Grid container spacing={2}>
@@ -31,11 +35,28 @@ const Favorite = () => {
               <Typography component={'p'} sx={{ mr: '5px' }}>
                 Удалить товары из избранного
               </Typography>
-              <HighlightOffIcon />
+              <Box onClick={() => setCount([])}>
+                <HighlightOffIcon />
+              </Box>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item></Grid>
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: 'flex',
+            justifyContent: 'start',
+            gap: '20px',
+            flexWrap: 'wrap',
+          }}
+        >
+          {count.length != 0 ? (
+            <CardFavorite />
+          ) : (
+            <Typography>У вас отсутствуют товары</Typography>
+          )}
+        </Grid>
       </Grid>
     </Container>
   );

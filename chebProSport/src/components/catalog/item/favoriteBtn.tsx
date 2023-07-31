@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Badge } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useGlobalContext } from '..';
+import { useGlobalContext } from '../../../store/AppStore';
 
-const FavoriteBtn = () => {
+type FavoriteProp = {
+  id: number;
+};
+
+const FavoriteBtn = ({ id }: FavoriteProp) => {
   const { count, setCount } = useGlobalContext();
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+
   const handelFavorite = () => {
-    if (isFavorite) {
-      setIsFavorite(false);
-      setCount(count - 1);
+    if (count.includes(id)) {
+      const newCount = count.filter((item) => item !== id);
+      setCount(newCount);
     } else {
-      setIsFavorite(true);
-      setCount(count + 1);
+      setCount([...count, id]);
     }
   };
 
@@ -20,11 +23,16 @@ const FavoriteBtn = () => {
     <Button
       onClick={handelFavorite}
       size='small'
-      sx={{ fontSize: '10px', textDecoration: 'underline', color: 'black' }}
+      sx={{
+        fontSize: '10px',
+        textDecoration: 'underline',
+        color: 'black',
+        ml: '10px',
+      }}
     >
       <Badge
         badgeContent={
-          <FavoriteIcon color={isFavorite ? 'error' : 'secondary'} />
+          <FavoriteIcon color={count.includes(id) ? 'error' : 'secondary'} />
         }
       >
         Добавить
