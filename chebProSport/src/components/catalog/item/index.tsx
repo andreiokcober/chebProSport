@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardContent,
@@ -6,7 +7,7 @@ import {
   CardActions,
   Grid,
   Box,
-  Link,
+  // Link,
 } from '@mui/material';
 import BasketBtn from './basketBtn';
 import FavoriteBtn from './favoriteBtn';
@@ -55,8 +56,8 @@ const Item = (prop: CardProp) => {
           }}
         >
           <Link
-            href={`${item.categoriesSlug}/${item.id}`}
-            sx={{ display: 'flex', justifyContent: 'center' }}
+            to={`${item.categoriesSlug}/${item.id}`}
+            // sx={{ display: 'flex', justifyContent: 'center' }}
           >
             <img
               src={item.image}
