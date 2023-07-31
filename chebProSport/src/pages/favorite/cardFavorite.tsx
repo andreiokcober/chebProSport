@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Card, Box, CardContent, CardActions, Typography } from '@mui/material';
 
 import BasketBtn from '../../components/catalog/item/basketBtn';
@@ -21,7 +21,7 @@ const CardFavorite = () => {
         const id = cardObj?.id;
 
         return (
-          <>
+          <Fragment key={id}>
             <Card
               sx={{
                 width: '235px',
@@ -79,7 +79,7 @@ const CardFavorite = () => {
                 <HighlightOffIcon />
               </Box>
             </Card>
-          </>
+          </Fragment>
         );
       })}
     </>
