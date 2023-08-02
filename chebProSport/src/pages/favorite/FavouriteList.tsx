@@ -7,17 +7,17 @@ import CardCatalog from '../../data/catalog';
 
 import BasketBtn from '../../components/Catalog/Item/BasketBtn';
 
-const CardFavorite = () => {
-  const { FavoriteCount, setFavoriteCount } = useGlobalContext();
+const FavouritList = () => {
+  const { favoriteCount, setFavoriteCount } = useGlobalContext();
 
   const deleteCard = (id: number | undefined) => {
-    const filterCount = FavoriteCount.filter((item) => item !== id);
+    const filterCount = favoriteCount.filter((item) => item !== id);
     setFavoriteCount(filterCount);
   };
 
   return (
     <>
-      {FavoriteCount.map((item) => {
+      {favoriteCount.map((item) => {
         const cardObj = CardCatalog.find((card) => card.id === item);
         const id = cardObj?.id;
 
@@ -87,4 +87,4 @@ const CardFavorite = () => {
   );
 };
 
-export default CardFavorite;
+export default FavouritList;

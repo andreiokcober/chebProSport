@@ -9,10 +9,12 @@ type FavoriteProp = {
 };
 
 const FavoriteBtn = ({ id }: FavoriteProp) => {
-  const { FavoriteCount, setFavoriteCount } = useGlobalContext();
+  const { favoriteCount, setFavoriteCount } = useGlobalContext();
+  const isFavoritesEmpty = favoriteCount.includes(+id);
+
   const handelFavorite = () => {
-    if (FavoriteCount.includes(+id)) {
-      const newCount = FavoriteCount.filter((item) => item !== id);
+    if (isFavoritesEmpty) {
+      const newCount = favoriteCount.filter((item) => item !== id);
       setFavoriteCount(newCount);
     } else {
       setFavoriteCount((prevCount) => [...prevCount, id]);
@@ -32,9 +34,7 @@ const FavoriteBtn = ({ id }: FavoriteProp) => {
     >
       <Badge
         badgeContent={
-          <FavoriteIcon
-            color={FavoriteCount.includes(id) ? 'error' : 'secondary'}
-          />
+          <FavoriteIcon color={isFavoritesEmpty ? 'error' : 'secondary'} />
         }
       >
         Добавить

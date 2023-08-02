@@ -14,22 +14,22 @@ export type GlobalContentType = {
 export type FavoriteCountType = Array<number>;
 
 export type GlobalContentValue = {
-  FavoriteCount: FavoriteCountType;
+  favoriteCount: FavoriteCountType;
   setFavoriteCount: Dispatch<SetStateAction<FavoriteCountType>>;
 };
 
 export const GlobalContext = createContext<GlobalContentValue>({
-  FavoriteCount: [],
+  favoriteCount: [],
   setFavoriteCount: () => null,
 } as GlobalContentValue);
 
 export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppStore = ({ children }: GlobalContentType) => {
-  const [FavoriteCount, setFavoriteCount] = useState<FavoriteCountType>([]);
+  const [favoriteCount, setFavoriteCount] = useState<FavoriteCountType>([]);
 
   return (
-    <GlobalContext.Provider value={{ FavoriteCount, setFavoriteCount }}>
+    <GlobalContext.Provider value={{ favoriteCount, setFavoriteCount }}>
       {children}
     </GlobalContext.Provider>
   );

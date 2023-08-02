@@ -3,7 +3,7 @@ import { Container, Grid, Typography, Link } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-import img from '../image/delivery/image 16.png';
+import img from '../../image/delivery/image 16.png';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>

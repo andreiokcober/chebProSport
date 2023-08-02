@@ -4,10 +4,10 @@ import { Container, Box, Typography } from '@mui/material';
 
 import Item from './Item';
 
-export type ItemConfig = { image: string };
-export type CarouselBlockPops = { data: Array<ItemConfig> };
+export type ItemConfigType = { image: string };
+export type CarouselBlockProps = { data: Array<ItemConfigType> };
 
-const CarouselBlock = ({ data }: CarouselBlockPops) => {
+const CarouselBlock = ({ data }: CarouselBlockProps) => {
   return (
     <Container maxWidth='xl'>
       <Box

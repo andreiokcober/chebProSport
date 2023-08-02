@@ -4,9 +4,9 @@ import { Grid, Typography, Link, Container } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-import Item from '../components/Carousel/Item';
+import Item from '../../components/Carousel/Item';
 
-import img from '../image//stock/image 18.png';
+import img from '../../image/stock/image 18.png';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>

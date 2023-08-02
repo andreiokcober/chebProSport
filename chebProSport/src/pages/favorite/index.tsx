@@ -5,7 +5,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 import { useGlobalContext } from '../../store/AppStore';
-import CardFavorite from './CardFavorite';
+import FavouritList from './FavouriteList';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' href='/'>
@@ -16,7 +16,7 @@ const breadcrumbs = [
   </Typography>,
 ];
 const Favorite = () => {
-  const { FavoriteCount, setFavoriteCount } = useGlobalContext();
+  const { favoriteCount, setFavoriteCount } = useGlobalContext();
 
   return (
     <Container maxWidth={'md'}>
@@ -51,9 +51,8 @@ const Favorite = () => {
             flexWrap: 'wrap',
           }}
         >
-          {FavoriteCount.length != 0 ? (
-            <CardFavorite />
-          ) : (
+          {favoriteCount.length !== 0 && <FavouritList />}
+          {favoriteCount.length == 0 && (
             <Typography>У вас отсутствуют товары</Typography>
           )}
         </Grid>

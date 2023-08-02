@@ -9,11 +9,11 @@ import { useGlobalContext } from '../../store/AppStore';
 import PATHS from '../../routes/AppRoutes';
 
 const IConsBlock = () => {
-  const { FavoriteCount } = useGlobalContext();
+  const { favoriteCount } = useGlobalContext();
   return (
     <Box sx={{ display: 'flex' }}>
       <Link to={PATHS.FAVORITE_PATH}>
-        <Badge badgeContent={FavoriteCount.length} color='secondary'>
+        <Badge badgeContent={favoriteCount.length} color='secondary'>
           <FavoriteIcon color='secondary' sx={{ fontSize: '2em' }} />
         </Badge>
       </Link>
