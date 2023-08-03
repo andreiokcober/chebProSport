@@ -8,7 +8,7 @@ import BasketBtn from '../../components/Catalog/Item/BasketBtn';
 import CardCatalog from '../../data/catalog';
 import BasicTabs from './Tabs/TabsCard';
 
-import { CardProp } from '../../components/Catalog/Item/Index';
+import { CardProp } from '../../components/Catalog/Item';
 
 const CardsPage = () => {
   const [post, setPost] = useState<CardProp>({

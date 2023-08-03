@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 
 import CardsContainer from './Cards';
-import CatalogMenu from './CatalogMenu/Index';
+import CatalogMenu from './CatalogMenu';
 import PaginationBlock from './Pagination';
 
 const Catalog = () => {

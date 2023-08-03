@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import Item from './Item/Index';
+import Item from './Item';
 
 import CardCatalog from '../../data/catalog';
 

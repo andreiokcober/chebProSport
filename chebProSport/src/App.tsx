@@ -4,8 +4,8 @@ import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 import AppStore from './store/AppStore';
-import Header from './components/Header/Index';
-import Footer from './components/Footer/Index';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import './index.css';
 import { PATH_CONFIG } from './routes/RouteConfig';
