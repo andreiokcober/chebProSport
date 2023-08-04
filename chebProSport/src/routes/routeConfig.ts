@@ -1,9 +1,9 @@
 import PATHS from './AppRoutes';
-import MainPage from '../pages/mainPage';
-import Stock from '../pages/stock';
-import Delivery from '../pages/delivery';
-import CardsPage from '../pages/сatalogCard/catalogCards';
-import Favorite from '../pages/favorite';
+import MainPage from '../pages/MainPage/Index';
+import Stock from '../pages/Stock/Index';
+import Delivery from '../pages/Delivery/Index';
+import CardsPage from '../pages/CatalogCard/Index';
+import Favorite from '../pages/Favorite/Index';
 
 export const PATH_CONFIG = [
   {

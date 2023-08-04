@@ -1,25 +1,35 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useState,
+} from 'react';
 
 export type GlobalContentType = {
   children: ReactNode;
 };
 
+export type FavoriteCountType = Array<number>;
+
 export type GlobalContentValue = {
-  count: number;
-  setCount: (count: number) => void;
+  favoriteCount: FavoriteCountType;
+  setFavoriteCount: Dispatch<SetStateAction<FavoriteCountType>>;
 };
 
-export const GlobalContext = createContext<GlobalContentValue>(
-  {} as GlobalContentValue,
-);
+export const GlobalContext = createContext<GlobalContentValue>({
+  favoriteCount: [],
+  setFavoriteCount: () => null,
+} as GlobalContentValue);
 
 export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppStore = ({ children }: GlobalContentType) => {
-  const [count, setCount] = useState<number>(0);
+  const [favoriteCount, setFavoriteCount] = useState<FavoriteCountType>([]);
 
   return (
-    <GlobalContext.Provider value={{ count, setCount }}>
+    <GlobalContext.Provider value={{ favoriteCount, setFavoriteCount }}>
       {children}
     </GlobalContext.Provider>
   );

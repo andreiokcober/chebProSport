@@ -2,10 +2,10 @@ import React from 'react';
 import { AppBar, Container, Box, Typography, Grid } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
-import Navigation from './catalog';
-import Search from './search';
-import IConsBlock from './icons';
-import Login from './login';
+import Navigation from './Catalog';
+import Search from './Search';
+import IConsBlock from './Icons';
+import Login from './Login';
 
 const Header = () => {
   return (

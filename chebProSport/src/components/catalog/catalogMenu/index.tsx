@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, List, Typography } from '@mui/material';
-import ButtonCatalogMenu from './button';
+
+import ButtonCatalogMenu from './Button';
 
 const CatalogMenu = () => {
   return (

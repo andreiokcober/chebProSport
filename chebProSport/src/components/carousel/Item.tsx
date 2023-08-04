@@ -1,7 +1,8 @@
 import React from 'react';
-import { ItemConfig } from './index';
 
-const Item = ({ image }: ItemConfig) => {
+import { ItemConfigType } from './Index';
+
+const Item = ({ image }: ItemConfigType) => {
   return (
     <div
       style={{ display: 'flex', justifyContent: 'center', maxWidth: '690px' }}

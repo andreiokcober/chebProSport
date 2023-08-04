@@ -1,5 +1,6 @@
 import { Container, Grid, List, Typography, Link } from '@mui/material';
 import React from 'react';
+
 import footerImage from '../../image/footerImage.png';
 import './index.css';
 

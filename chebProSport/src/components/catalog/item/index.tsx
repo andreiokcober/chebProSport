@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardContent,
@@ -6,10 +7,10 @@ import {
   CardActions,
   Grid,
   Box,
-  Link,
 } from '@mui/material';
-import BasketBtn from './basketBtn';
-import FavoriteBtn from './favoriteBtn';
+
+import BasketBtn from './BasketBtn';
+import FavoriteBtn from './FavoriteBtn';
 
 export type CardProp = {
   item: {
@@ -55,8 +56,8 @@ const Item = (prop: CardProp) => {
           }}
         >
           <Link
-            href={`${item.categoriesSlug}/${item.id}`}
-            sx={{ display: 'flex', justifyContent: 'center' }}
+            to={`${item.categoriesSlug}/${item.id}`}
+            style={{ display: 'flex', justifyContent: 'center' }}
           >
             <img
               src={item.image}
@@ -87,7 +88,7 @@ const Item = (prop: CardProp) => {
         </CardContent>
         <CardActions>
           <BasketBtn />
-          <FavoriteBtn />
+          <FavoriteBtn id={item.id} />
         </CardActions>
       </Card>
     </Grid>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import Item from './item';
+
+import Item from './Item';
+
 import CardCatalog from '../../data/catalog';
 
 const CardsContainer = () => (

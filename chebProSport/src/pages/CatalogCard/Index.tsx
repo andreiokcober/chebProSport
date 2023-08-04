@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Container, Grid, Link, Typography, Box } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import BasketBtn from '../../components/catalog/item/basketBtn';
+
+import BasketBtn from '../../components/Catalog/Item/BasketBtn';
 import CardCatalog from '../../data/catalog';
-import { CardProp } from '../../components/catalog/item';
-import BasicTabs from './tabs/tabsCard';
+import BasicTabs from './Tabs/TabsCard';
+
+import { CardProp } from '../../components/Catalog/Item';
 
 const CardsPage = () => {
   const [post, setPost] = useState<CardProp>({
