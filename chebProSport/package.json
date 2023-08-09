@@ -1,7 +1,7 @@
 {
   "name": "cheb-pro-sport",
   "version": "0.1.0",
-  "homepage": "https://andreiokcober.github.io/chebProSport",
+  "homepage": "https://andreiokcober.github.io",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
