@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/chebProSport/static/css/main.f841ede6.css",
-    "main.js": "/chebProSport/static/js/main.d404a07c.js",
-    "static/media/image.png": "/chebProSport/static/media/image.f2fb5b3ec98e163a192c.png",
-    "static/media/image 18.png": "/chebProSport/static/media/image 18.d9c3395f5e679437775f.png",
-    "static/media/image 16.png": "/chebProSport/static/media/image 16.8a103b8307f6126a48d1.png",
-    "static/media/image 12.png": "/chebProSport/static/media/image 12.a26ba5a2e6ce29b2206c.png",
-    "static/media/image 8.png": "/chebProSport/static/media/image 8.82f631c5c10bed4be9e0.png",
-    "static/media/image 9.png": "/chebProSport/static/media/image 9.47671413c55cdb0d5602.png",
-    "static/media/image 13.png": "/chebProSport/static/media/image 13.2f888a23c96ca8002d6e.png",
-    "static/media/image 10.png": "/chebProSport/static/media/image 10.e8f7671f048182ba7282.png",
-    "static/media/image 11.png": "/chebProSport/static/media/image 11.a7aa03c546dfff234f53.png",
-    "index.html": "/chebProSport/index.html",
-    "main.f841ede6.css.map": "/chebProSport/static/css/main.f841ede6.css.map",
-    "main.d404a07c.js.map": "/chebProSport/static/js/main.d404a07c.js.map"
+    "main.css": "/static/css/main.f841ede6.css",
+    "main.js": "/static/js/main.e77a0076.js",
+    "static/media/image.png": "/static/media/image.f2fb5b3ec98e163a192c.png",
+    "static/media/image 18.png": "/static/media/image 18.d9c3395f5e679437775f.png",
+    "static/media/image 16.png": "/static/media/image 16.8a103b8307f6126a48d1.png",
+    "static/media/image 12.png": "/static/media/image 12.a26ba5a2e6ce29b2206c.png",
+    "static/media/image 8.png": "/static/media/image 8.82f631c5c10bed4be9e0.png",
+    "static/media/image 9.png": "/static/media/image 9.47671413c55cdb0d5602.png",
+    "static/media/image 13.png": "/static/media/image 13.2f888a23c96ca8002d6e.png",
+    "static/media/image 10.png": "/static/media/image 10.e8f7671f048182ba7282.png",
+    "static/media/image 11.png": "/static/media/image 11.a7aa03c546dfff234f53.png",
+    "index.html": "/index.html",
+    "main.f841ede6.css.map": "/static/css/main.f841ede6.css.map",
+    "main.e77a0076.js.map": "/static/js/main.e77a0076.js.map"
   },
   "entrypoints": [
     "static/css/main.f841ede6.css",
-    "static/js/main.d404a07c.js"
+    "static/js/main.e77a0076.js"
   ]
 }
