@@ -14,7 +14,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин в капсулах',
     production: 'USA',
     weight: '300гр',
     description:
@@ -28,7 +28,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин в капсулах',
     production: 'USA',
     weight: '300гр',
     description:
@@ -42,7 +42,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин в капсулах',
     production: 'USA',
     weight: '300гр',
     description:
@@ -56,7 +56,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин в капсулах',
     production: 'USA',
     weight: '300гр',
     description:
@@ -70,7 +70,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин в капсулах',
     production: 'USA',
     weight: '300гр',
     description:
@@ -84,7 +84,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин моногидрат',
     production: 'USA',
     weight: '300гр',
     description:
@@ -98,7 +98,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин моногидрат',
     production: 'USA',
     weight: '300гр',
     description:
@@ -112,7 +112,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин моногидрат',
     production: 'USA',
     weight: '300гр',
     description:
@@ -126,7 +126,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Креатин',
     categoriesSlug: 'creatine',
-    type: 'Капсулы',
+    type: 'Креатин моногидрат',
     production: 'USA',
     weight: '300гр',
     description:
@@ -140,7 +140,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Сывороточный',
     production: 'USA',
     weight: '300гр',
     description:
@@ -154,7 +154,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Сывороточный',
     production: 'USA',
     weight: '300гр',
     description:
@@ -168,7 +168,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Казеиновый',
     production: 'USA',
     weight: '300гр',
     description:
@@ -182,7 +182,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Казеиновый',
     production: 'USA',
     weight: '300гр',
     description:
@@ -196,7 +196,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Казеиновый',
     production: 'USA',
     weight: '300гр',
     description:
@@ -210,7 +210,7 @@ const CardCatalog = [
     price: '40$',
     categories: 'Протеин',
     categoriesSlug: 'protein',
-    type: 'Капсулы',
+    type: 'Казеиновый',
     production: 'USA',
     weight: '300гр',
     description:
