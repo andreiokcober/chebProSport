@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 
@@ -36,6 +36,7 @@ function App() {
                   <Route key={path} path={path} element={<Component />} />
                 ),
             )}
+            <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </main>
         <Footer />
