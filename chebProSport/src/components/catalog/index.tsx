@@ -33,7 +33,15 @@ const Catalog = () => {
             <Grid item xs={3}>
               <CatalogMenu />
             </Grid>
-            <Grid item xs={9}>
+            <Grid
+              item
+              xs={9}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
               <CardsContainer />
               <PaginationBlock />
             </Grid>
