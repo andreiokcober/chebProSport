@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { Container, Grid } from '@mui/material';
 
-import CardsContainer from './Cards';
+import CardsContainer from './CardsContainer';
 import CatalogMenu from './CatalogMenu';
 import PaginationBlock from './Pagination';
 
