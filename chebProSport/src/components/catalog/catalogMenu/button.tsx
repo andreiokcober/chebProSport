@@ -1,12 +1,16 @@
 import React, { useState, useRef } from 'react';
 import { ListItem, ListItemButton, ListItemText } from '@mui/material';
 
+import { useGlobalSortCard } from '..';
+
 type ButtonMenuConfig = {
   name: string;
   content?: Array<string>;
 };
 
 const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
+  const { setSortCard } = useGlobalSortCard();
+
   const { name, content } = prop;
   const [openButton, setOpenButton] = useState<boolean>(false);
   const svg = useRef<SVGSVGElement | null>(null);
@@ -54,6 +58,7 @@ const ButtonCatalogMenu = (prop: ButtonMenuConfig) => {
           return (
             <ListItem key={item} sx={{ padding: '0' }}>
               <ListItemButton
+                onClick={() => setSortCard(item)}
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
